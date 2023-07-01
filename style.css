@@ -350,10 +350,10 @@ aside>* {
 footer {
     width: 100%;
     line-height: 2rem;
-    text-align: center;
     font-size: .7rem;
 }
 
 footer p, footer span {
     font-size: .7rem;
+    text-align: center;
 }
