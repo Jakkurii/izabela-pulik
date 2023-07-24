@@ -26,7 +26,7 @@ p {
     text-align: justify;
 }
 
-h1, h2, h3 {
+h1, h2, h3, h4 {
     font-family: Montserrat, Arial, sans-serif;
     font-weight: 200;
 }
@@ -37,11 +37,15 @@ h1 {
 
 h2 {
     font-size: 3rem;
-    margin: 3rem 0 2rem 0;
+    margin: 3rem 0 1.5rem 0;
 }
 
 h3 {
     font-size: 1.5rem;
+    margin: 2rem 0 1rem 0;
+}
+
+h4 {
     margin: 2rem 0 1rem 0;
 }
 
@@ -91,6 +95,7 @@ menu {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
+    background-color: #101116;
 }
 
 .nav li {
@@ -164,7 +169,8 @@ menu {
     .nav ul {        
         flex-direction: column;
         align-items: right;
-        background-color: var(--bgColor);
+        background-color: #101116;
+        box-shadow: 0 0 5px #000;
     }
     .burger {
         display: block;
@@ -204,8 +210,8 @@ header .wrap {
 span.hp {
     position: absolute;
     top: 0;
-    left: 0;
-    right: 0;
+    left: 50%;
+    transform: translateX(-50%);
     font-size: 20rem;
     color: rgba(255, 255, 255, .0);
     -webkit-text-stroke: 4px rgba(255, 255, 255, .05);
@@ -214,11 +220,22 @@ span.hp {
 span.hi {
     position: absolute;
     top: 20vh;
-    left: 0;
-    right: 0;
+    left: 50%;
+    transform: translateX(-50%);
     font-size: 16rem;
     color: rgba(255, 255, 255, .05);
     white-space: nowrap;
+}
+
+@media (max-width: 900px) {
+    span.hp {
+        top: 8vh;
+        font-size: 14rem;
+    }
+    span.hi {
+        top: 25vh;
+        font-size: 10rem;
+    }
 }
 
 header img {
@@ -252,6 +269,28 @@ main {
     position: relative;
 }
 
+main h2 {
+    padding-left: 1rem;
+}
+
+main h2::before {
+    display: block;
+    content: "";
+    position: absolute;
+    height: 3rem;
+    width: 6px;
+    background-color: rgb(218, 98, 125);
+    transform: translate(-1rem, 5px);
+}
+
+#portfolio h2::before {
+    background-color: rgb(148, 111, 189);
+}
+
+#kontakt h2::before {
+    background-color: rgb(0, 212, 255);
+}
+
 /*o mnie*/
 
 .omnie-flex {
@@ -261,22 +300,59 @@ main {
     justify-content: space-between;
 }
 
-.omnie-flex section:first-child{
-    width: 70%;
+.omnie-flex section {
+    width: 100%;
 }
+
+/*umiejetnosci*/
 
 aside>* {
     text-align: right;
 }
 
-@media (max-width: 1200px) {
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 1.5rem;
+}
+
+.skills .icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: .4rem;
+}
+
+.skills .icon img {
+    width: 48px;
+}
+
+.skills .icon span {
+    font-weight: 300;
+    font-size: .7rem;
+    line-height: .8rem;
+}
+
+@media (max-width: 1000px) {
     .omnie-flex {
     flex-direction: column;
     }
     #omnie>*{
         width: 100%;
     }
-    aside {
+    aside>* {
+        text-align: center;
+    }
+    .skills {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 650px) {
+    .gallery-filter {
         text-align: center;
     }
 }
@@ -311,7 +387,7 @@ aside>* {
 
 .gridgallery {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
     grid-gap: 1rem;
     row-gap: 1rem;
     width: 100%;
@@ -350,7 +426,9 @@ aside>* {
 footer {
     width: 100%;
     line-height: 2rem;
+    text-align: center;
     font-size: .7rem;
+    background-color: #101116;
 }
 
 footer p, footer span {
