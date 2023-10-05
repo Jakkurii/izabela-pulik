@@ -186,7 +186,7 @@ header {
     margin: 3rem 0 5rem 0;
     position: relative;
     background: linear-gradient(120deg, rgba(218, 98, 125, 1) 0%, rgba(148, 111, 189, 1) 50%, rgba(0, 212, 255, 1) 100%);
-    overflow-x: hidden;
+    /*overflow-x: hidden;*/
 }
 
 .diagonal {
